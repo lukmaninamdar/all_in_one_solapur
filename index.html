@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All In One Solapur | Premium City Gateway</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .form-section-title {
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border);
+            color: var(--navy);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .form-section-title i { color: var(--aqua); font-size: 0.9rem; }
+        .helper-text { font-size: 0.75rem; color: var(--text-muted); margin-top: -5px; margin-bottom: 15px; display: block; }
+        .promo-line { text-align: center; font-size: 0.9rem; color: var(--navy); margin-top: 20px; font-weight: 600; line-height: 1.4; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+        
+        /* New Success Styles */
+        .success-overlay {
+            position: fixed; inset: 0; background: rgba(35, 53, 90, 0.9);
+            display: none; align-items: center; justify-content: center; z-index: 9999; padding: 20px;
+        }
+        .success-card {
+            background: white; padding: 40px; border-radius: 30px; text-align: center; max-width: 400px;
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .success-icon { font-size: 4rem; color: var(--aqua); margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+ <nav class="navbar luxury-nav">
+  <div class="container nav-flex">
+    <div class="brand-logo" onclick="switchView('home')" style="cursor:pointer">
+      <span class="brand-icon">✦</span>
+      <span class="brand-name">All in One <b>Solapur</b></span>
+    </div>
+    <div class="nav-links">
+      <button onclick="switchView('home')" class="nav-item">Home</button>
+      <button onclick="switchView('services')" class="nav-item">Services</button>
+      <button onclick="switchView('marriage')" class="nav-item marriage-btn">Marriage Connect</button>
+      <button onclick="switchView('register')" class="btn-primary" style="padding: 10px 20px;">Partner With Us</button>
+    </div>
+  </div>
+</nav>
+
+<header id="main-hero" class="hero luxury-hero">
+  <div class="container hero-content">
+    <span class="luxury-badge">Solapur’s Most Trusted Digital Hub</span>
+    <h1 class="luxury-title">
+      All in One <span>Solapur</span><br>
+      <small>Your City. Your Services. Your Trust.</small>
+    </h1>
+    <p class="hero-sub">
+      A premium digital gateway connecting families with verified professionals across Solapur — 
+      with dignity, trust & excellence.
+    </p>
+    <div class="hero-buttons" style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin-top:30px;">
+
+    <!-- Premium Explore Button -->
+    <a href="javascript:void(0)"
+   onclick="switchView('services')"
+       style="
+        padding:14px 32px;
+        border-radius:50px;
+        background:linear-gradient(135deg,#1e3c72,#2a5298);
+        color:#fff;
+        font-weight:600;
+        text-decoration:none;
+        box-shadow:0 10px 25px rgba(0,0,0,0.15);
+        transition:0.3s ease;
+       "
+       onmouseover="this.style.transform='translateY(-3px)'"
+       onmouseout="this.style.transform='translateY(0)'">
+       ✦ Explore Marketplace
+    </a>
+
+    <!-- Premium Marriage Button -->
+    <a href="javascript:void(0)"
+   onclick="switchView('marriage')"
+       style="
+        padding:14px 32px;
+        border-radius:50px;
+        background:linear-gradient(135deg,#8e2de2,#4a00e0);
+        color:#fff;
+        font-weight:600;
+        text-decoration:none;
+        box-shadow:0 10px 25px rgba(0,0,0,0.15);
+        transition:0.3s ease;
+       "
+       onmouseover="this.style.transform='translateY(-3px)'"
+       onmouseout="this.style.transform='translateY(0)'">
+       💍 Marriage Connect
+    </a>
+
+    <!-- Premium Instagram Follow Button -->
+    <a href="https://www.instagram.com/all_in_one_solapur/" 
+       target="_blank"
+       style="
+        padding:14px 32px;
+        border-radius:50px;
+        background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+        color:#fff;
+        font-weight:600;
+        text-decoration:none;
+        box-shadow:0 10px 25px rgba(0,0,0,0.2);
+        transition:0.3s ease;
+       "
+       onmouseover="this.style.transform='translateY(-3px)'"
+       onmouseout="this.style.transform='translateY(0)'">
+       📸 Follow Us on Instagram
+    </a>
+
+</div>
+
+  </div>
+</header>
+
+    <main id="app-root">
+        
+        <!-- HOME VIEW -->
+        <section id="view-home" class="view active">
+            <section class="trust-strip">
+                <div class="container strip-flex">
+                    <div class="trust-item"><i class="fas fa-check-circle"></i> Solapur-Based</div>
+                    <div class="trust-item"><i class="fas fa-shield-halved"></i> Respectful & Reliable</div>
+                    <div class="trust-item"><i class="fas fa-user-check"></i> Vetted Professionals</div>
+                </div>
+            </section>
+
+            <section class="gateway-marriage container">
+                <div class="m-entry-card" onclick="switchView('marriage')">
+                    <div class="m-entry-info">
+                        <h3>🕌 Muslim Marriage Connect</h3>
+                        <p>A private, dignified platform for matrimonial connections within the Solapur community.</p>
+                        <span class="m-cta">Enter Marriage Connect <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quick-cta container" style="margin-bottom: 80px;">
+                <div class="cta-banner" style="background: white; padding: 50px; border-radius: 30px; text-align: center; border: 1px solid var(--border);">
+                    <h2 class="serif-text">Can't find what you're looking for?</h2>
+                    <p style="margin: 15px 0 30px; color: var(--text-muted);">Message us directly on Instagram or WhatsApp for personalized assistance.</p>
+                  <div class="cta-buttons" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+    
+    <a href="https://instagram.com/all_in_one_solapur" target="_blank"
+       style="
+        display:inline-flex;
+        align-items:center;
+        gap:12px;
+        padding:15px 30px;
+        border-radius:50px;
+        background: linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+        color:white;
+        font-weight:600;
+        text-decoration:none;
+        box-shadow:0 10px 25px rgba(0,0,0,0.15);
+        transition:0.3s;">
+        
+        <i class="fab fa-instagram" style="font-size:1.2rem;"></i>
+        Message us on Instagram
+    </a>
+
+    <button onclick="switchView('register')" class="btn-primary">
+        Register your Business
+    </button>
+
+</div>
+
+                </div>
+            </section>
+        </section>
+
+        <!-- SERVICES VIEW -->
+        <section id="view-services" class="view">
+            <div class="container">
+                <div class="view-header" style="text-align: center; margin-bottom: 40px;">
+                    <h2 class="serif-text" style="font-size: 2.5rem;">Service Marketplace</h2>
+                    <p>Select a category to submit your specific requirements.</p>
+                    <div class="search-box" style="max-width: 500px; margin: 25px auto; position: relative;">
+                        <i class="fas fa-search" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                        <input type="text" id="serviceSearch" placeholder="Search (e.g. Chef, Nikahnama, Makeup)..." style="width:100%; padding: 15px 15px 15px 50px; border-radius: 50px; border: 1px solid var(--border); outline: none;">
+                    </div>
+                </div>
+                <div id="services-grid" class="services-grid"></div>
+            </div>
+        </section>
+
+        <!-- MARRIAGE VIEW -->
+        <section id="view-marriage" class="view">
+            <div class="container narrow">
+                <div class="form-container glass">
+                    <div class="form-header" style="text-align:center; margin-bottom: 30px;">
+                        <h2 class="serif-text">Muslim Marriage Connect</h2>
+                        <p>Bismillah. A respectful space for families. Your details are safe and shared only with verified inquiries.</p>
+                    </div>
+                    <form id="marriageForm" class="premium-form">
+                        <h3 class="form-section-title"><i class="fas fa-user"></i> Basic Details</h3>
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" name="Full Name" placeholder="Full name of candidate" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Gender</label>
+                                <select name="Gender" id="mGender" onchange="toggleGenderFields()" required>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Marital Status</label>
+                                <select name="Marital Status" required>
+				    <option value="Never Married">Never Married</option>
+			            <option value="Single">Single</option>                   
+                                    <option value="Divorced">Divorced</option>
+                                    <option value="Widow">Widow</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Date of Birth</label>
+                                <input type="date" name="DOB" id="mDob" onchange="calculateAge()" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Age</label>
+                                <input type="number" name="Age" id="mAge" placeholder="Age" required readonly>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Height</label>
+                                <input type="text" name="Height" placeholder="e.g. 5'8\"" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Religion</label>
+                                <input type="text" name="Religion" value="Muslim" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Sect (Optional)</label>
+                            <input type="text" name="Sect" placeholder="Sunni / Shia / Other">
+                        </div>
+                        <h3 class="form-section-title"><i class="fas fa-briefcase"></i> Education & Career</h3>
+                        <div class="form-group">
+                            <label>Highest Education</label>
+                            <input type="text" name="Education" placeholder="e.g. B.E, MBA, MBBS" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Occupation</label>
+                            <input type="text" name="Occupation" placeholder="e.g. Software Engineer, Doctor" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Company / Business Type</label>
+                                <input type="text" name="Company" placeholder="Employer or Business Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Annual Income (Optional)</label>
+                                <input type="text" name="Income" placeholder="e.g. 8 LPA">
+                            </div>
+                        </div>
+                        <h3 class="form-section-title"><i class="fas fa-users"></i> Family Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Father's Name</label>
+                                <input type="text" name="Father Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Father's Occupation</label>
+                                <input type="text" name="Father Work" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Mother's Name</label>
+                            <input type="text" name="Mother Name" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Native Place</label>
+                                <input type="text" name="Native Place" placeholder="Village/Town" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Current City</label>
+                                <input type="text" name="Current City" placeholder="City of Residence" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Guardian Contact Number</label>
+                                <input type="tel" name="Phone" placeholder="Primary Mobile" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Alternative Contact (Optional)</label>
+                                <input type="tel" name="Alt Phone" placeholder="Other Mobile">
+                            </div>
+                        </div>
+                        <h3 class="form-section-title"><i class="fas fa-mosque"></i> Religious & Personal Info</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Namaz</label>
+                                <select name="Namaz" required>
+                                    <option value="Regular">Regular</option>
+                                    <option value="Sometimes">Sometimes</option>
+                                    <option value="Not Regular">Not Regular</option>
+                                </select>
+                            </div>
+                            <div class="form-group" id="genderSpecificField">
+                                <label id="genderLabel">Beard</label>
+                                <select name="Religious Sign">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Hobbies</label>
+                            <input type="text" name="Hobbies" placeholder="What do you enjoy doing?">
+                        </div>
+                        <div class="form-group">
+                            <label>About Me (Short Bio)</label>
+                            <textarea name="Bio" rows="3" placeholder="3–4 lines describing your personality..." required></textarea>
+                        </div>
+                        <h3 class="form-section-title"><i class="fas fa-heart"></i> Partner Preference</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Preferred Age Range</label>
+                                <input type="text" name="Partner Age" placeholder="e.g. 22-26" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Preferred Education</label>
+                                <input type="text" name="Partner Edu" placeholder="e.g. Graduate" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred City</label>
+                            <input type="text" name="Partner City" placeholder="City preference" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Other Expectations</label>
+                            <textarea name="Expectations" rows="2" placeholder="Any specific requirements..."></textarea>
+                        </div>
+                        <h3 class="form-section-title"><i class="fas fa-cloud-upload-alt"></i> Upload Section</h3>
+                        <div class="form-group">
+                            <label>Profile Photo (Recommended)</label>
+                            <input type="file" name="Photo" accept="image/*">
+                            <small class="helper-text">Optional: This helps in better visibility.</small>
+                        </div>
+                        <div class="form-group">
+                            <label>ID Proof (Admin Verification Only)</label>
+                            <input type="file" name="ID Proof" accept="image/*,application/pdf" required>
+                            <small class="helper-text">Aadhar or Voter ID. This is kept strictly private.</small>
+                        </div>
+                        <button type="submit" class="btn-primary w-full" style="padding: 18px;">Submit Interest</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- REGISTER VIEW -->
+        <section id="view-register" class="view">
+            <div class="container narrow">
+                <div class="form-container glass">
+                    <div class="form-header" style="text-align:center; margin-bottom: 30px;">
+                        <h2 class="serif-text">Partner Registration</h2>
+                        <p>Join Solapur's premium service network and grow your business.</p>
+                    </div>
+<form id="partnerForm" class="premium-form" onsubmit="sendPartnerWhatsApp(event)">
+                        
+                        <h3 class="form-section-title"><i class="fas fa-id-card"></i> Basic Business Details</h3>
+                        <div class="form-group">
+                            <label>Business Name</label>
+                            <input type="text" name="Business Name" placeholder="Official Business Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Owner Name</label>
+                            <input type="text" name="Owner Name" placeholder="Full Name of Owner" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Contact Number</label>
+                                <input type="tel" name="Contact Number" placeholder="Primary Phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label>WhatsApp Number</label>
+                                <input type="tel" name="WhatsApp Number" placeholder="If different">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" name="Email" placeholder="business@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Business Address</label>
+                            <input type="text" name="Address" placeholder="Area + City" required>
+                        </div>
+
+                        <h3 class="form-section-title"><i class="fas fa-globe"></i> Online Presence</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Instagram Handle</label>
+                                <input type="text" name="Instagram" placeholder="@yourprofile" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Facebook Page</label>
+                                <input type="text" name="Facebook" placeholder="Optional">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Website URL</label>
+                            <input type="url" name="Website" placeholder="https://example.com (Optional)">
+                        </div>
+                        <div class="form-group">
+                            <label>Google Maps Link</label>
+                            <input type="text" name="Maps" placeholder="Link to your location (Optional)">
+                        </div>
+
+                        <h3 class="form-section-title"><i class="fas fa-info-circle"></i> Business Information</h3>
+                        <div class="form-group">
+                            <label>Select Category</label>
+                            <select name="Category" required>
+                                <option value="">Choose Category</option>
+                                <option value="Wedding Services">Wedding Services</option>
+                                <option value="Catering">Catering</option>
+                                <option value="Photography">Photography</option>
+                                <option value="Clothing">Clothing</option>
+                                <option value="Education">Education</option>
+                                <option value="Health">Health</option>
+                                <option value="Real Estate">Real Estate</option>
+                                <option value="Islamic Services">Islamic Services</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Years of Experience</label>
+                                <input type="number" name="Experience" placeholder="e.g. 5" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Team Size</label>
+                                <input type="number" name="Team Size" placeholder="Total staff" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Service Coverage Area</label>
+                            <input type="text" name="Coverage" placeholder="e.g. Solapur / Nearby Cities" required>
+                        </div>
+
+                        <h3 class="form-section-title"><i class="fas fa-certificate"></i> Trust & Verification</h3>
+                        <div class="form-group">
+                            <label>GST Number (Optional)</label>
+                            <input type="text" name="GST" placeholder="27XXXXX...">
+                        </div>
+                        <div class="form-group">
+                            <label>Visiting Card Upload</label>
+                            <input type="file" name="Visiting Card" accept="image/*">
+                        </div>
+                        <div class="form-group">
+                            <label>Business Photo Upload</label>
+                            <input type="file" name="Business Photo" accept="image/*">
+                        </div>
+
+                        <h3 class="form-section-title"><i class="fas fa-bullhorn"></i> Short Pitch Section</h3>
+                        <div class="form-group">
+                            <label>Why should customers choose you?</label>
+                            <textarea name="Pitch" rows="3" placeholder="Tell customers about your unique quality (2-3 lines)..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary w-full" style="padding: 18px;">Apply to Join</button>
+                        <p class="promo-line">After successful submission, we will promote your business for FREE and connect you with multiple potential customers across Solapur.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer" style="padding: 40px 0; border-top: 1px solid var(--border); margin-top: 80px; text-align: center;">
+        <div class="container">
+            <p>&copy; 2024 All In One Solapur. All Rights Reserved.</p>
+            <div class="socials" style="display: flex; gap: 20px; justify-content: center; margin: 15px 0;">
+<a href="https://instagram.com/all_in_one_solapur" target="_blank" 
+   style="color: var(--navy); font-size: 1.4rem;">
+                <a href="#" style="color: var(--navy); font-size: 1.2rem;"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="mobile-nav">
+        <button onclick="switchView('home')"><i class="fas fa-home"></i> Home</button>
+        <button onclick="switchView('services')"><i class="fas fa-th-large"></i> Services</button>
+        <button onclick="switchView('marriage')"><i class="fas fa-heart"></i> Marriage</button>
+    </div>
+
+    <div id="reqModal" class="modal">
+        <div class="modal-body glass">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <div id="successOverlay" class="success-overlay">
+        <div class="success-card">
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h2 class="serif-text">Submitted!</h2>
+<p style="margin: 15px 0;">
+Your details are ready.<br>
+WhatsApp will open automatically.<br>
+Please attach your Image/Photo After sending.
+</p>
+            <button onclick="location.reload()" class="btn-primary w-full">Done</button>
+        </div>
+    </div>
+
+    <script>
+        const SERVICES_DATA = [
+
+            { id: 'chef', title: 'Professional Chef for Dawat', cat: 'Events', tag: 'Essential', icon: '🍽️', desc: 'Specialized in Hyderabadi, Mughlai, and local Solapuri function cooking.', fields: ['Guests Count', 'Menu Preference', 'Venue Area'] },
+            { id: 'bridal', title: 'Makeup & Bridal Parlour', cat: 'Wedding', tag: 'Popular', icon: '💄', desc: 'Premium bridal packages and festive makeup artists available city-wide.', fields: ['Occasion Type', 'Home Service Req?'] },
+            { id: 'photo', title: 'Photography & Videography', cat: 'Media', tag: 'New', icon: '📸', desc: 'Professional event coverage, portraits, and commercial shoots.', fields: ['Event Hours', 'Output Type'] },
+            { id: 'nikah', title: 'Customized Nikahnama Books', cat: 'Wedding', tag: 'Artisan', icon: '📜', desc: 'Handcrafted, elegant Nikahnama books tailored for your special day.', fields: ['Theme/Color', 'Delivery Date'] },
+{
+    id: 'aa_shoes',
+    title: 'AA Shoes Store – Bara Imam Chowk',
+    cat: 'Shopping',
+    tag: 'New',
+    icon: '🥿',
+    desc: 'Multi-brand footwear store for men & women in Solapur.',
+    fields: []
+},
+
+            { id: 'wedding_support', title: 'Muslim Wedding Planning', cat: 'Wedding', tag: 'Premium', icon: '🤝', desc: 'End-to-end support for managing your family functions with ease.', fields: ['Event Type', 'Support Level'] },
+            { id: 'funeral', title: 'Muslim Funeral Essentials', cat: 'Community', tag: 'Service', icon: '🕋', desc: 'Dignified Janaza support and essential supply arrangements.', fields: ['Urgency', 'Requirements'] },
+            { id: 'gifts', title: 'Handcrafted Resin & Gifts', cat: 'Craft', tag: 'Boutique', icon: '🎁', desc: 'Personalized resin art and premium gift hampers for any occasion.', fields: ['Item Type', 'Personalization Details'] },
+            { id: 'decor', title: 'Flower & Event Decoration', cat: 'Events', tag: 'Trending', icon: '🌸', desc: 'Modern stage decor, floral backdrops, and home event styling.', fields: ['Event Type', 'Decor Level'] },
+            { id: 'mehndi', title: 'Mehndi Artists', cat: 'Wedding', tag: 'Popular', icon: '🎨', desc: 'Arabic, Indian, and Bridal mehndi designs by top local artists.', fields: ['Style', 'Number of Hands'] },
+            { id: 'caterers', title: 'Home-based Caterers', cat: 'Food', tag: 'Authentic', icon: '🥘', desc: 'Small scale authentic home-cooked meals for family gatherings.', fields: ['Number of Plates', 'Menu Type'] },
+            { id: 'islamic_events', title: 'Islamic Event Services', cat: 'Community', tag: 'Spiritual', icon: '🌙', desc: 'Arrangements for Milad, Dars, and other religious gatherings.', fields: ['Type of Gathering', 'Setup Required'] }
+        ];
+
+        function switchView(viewId) {
+            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+            const target = document.getElementById('view-' + viewId);
+            if(target) target.classList.add('active');
+            
+            const hero = document.getElementById('main-hero');
+            if(viewId === 'home') {
+                hero.style.display = 'block';
+            } else {
+                hero.style.display = 'none';
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function renderServices(data) {
+            const grid = document.getElementById('services-grid');
+            if (!grid) return;
+            grid.innerHTML = data.map(item => `
+                <div class="s-card" onclick="openRequirementForm('${item.id}')">
+                    <span class="s-tag">${item.tag}</span>
+                    <div class="s-icon-circle">${item.icon}</div>
+                    <h3 class="serif-text">${item.title}</h3>
+                    <p>${item.desc}</p>
+                </div>
+            `).join('');
+        }
+
+        function openRequirementForm(id) {
+            const service = SERVICES_DATA.find(s => s.id === id);
+    if(id === 'aa_shoes'){
+        openAAShoesPage();
+        return;
+    }
+if(id === 'funeral'){
+    openFuneralServicePage();
+    return;
+}
+      
+            const modal = document.getElementById('reqModal');
+            const container = document.getElementById('modalContent');
+            if (!service) return;
+
+            let dynamicFields = service.fields.map(f => `
+                <div class="form-group">
+                    <label>${f}</label>
+                    <input type="text" name="${f}" placeholder="Please specify..." required>
+                </div>
+            `).join('');
+
+            container.innerHTML = `
+                <div class="form-header" style="text-align:center; margin-bottom: 25px;">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">${service.icon}</div>
+                    <h2 class="serif-text">${service.title}</h2>
+                    <p>Tell us what you need, and we'll connect you with the right expert.</p>
+                </div>
+                <form class="premium-form" onsubmit="sendDirectWhatsApp(event, '${service.title}')">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" name="Customer Name" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Contact Number</label>
+                            <input type="tel" name="Phone" placeholder="Mobile" required>
+                        </div>
+                    </div>
+                    ${dynamicFields}
+                    <div class="form-group">
+                        <label>Preferred Date / Deadline</label>
+                        <input type="date" name="Date" required>
+                    </div>
+                    <button type="submit" class="btn-primary w-full" style="padding: 15px;">Submit Requirement</button>
+                </form>
+            `;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('reqModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function handleFinalSubmit(event, title) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const details = {};
+            formData.forEach((value, key) => { details[key] = value });
+            
+            const lead = { type: title, timestamp: new Date().toISOString(), details: details };
+            const existing = JSON.parse(localStorage.getItem('solapur_leads') || '[]');
+            existing.push(lead);
+            localStorage.setItem('solapur_leads', JSON.stringify(existing));
+
+            closeModal();
+            const successOverlay = document.getElementById('successOverlay');
+            successOverlay.style.display = 'flex';
+            
+            if (typeof confetti === 'function') {
+                confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#23355a', '#4ee6eb', '#f9b17a'] });
+            }
+
+           const activeView = document.querySelector('.view.active');
+const sourcePage = activeView ? activeView.id.replace('view-', '') : 'unknown';
+
+const now = new Date();
+const formattedDate = now.toLocaleString();
+
+const customerName = details['Customer Name'] || details['Full Name'] || details['Owner Name'] || 'Customer';
+const phoneNumber = details['Phone'] || details['Contact Number'] || 'N/A';
+
+let fullMessage = `✨ *New Service Enquiry – All In One Solapur* ✨
+
+📌 *Service Requested:* ${title}
+🌐 *Source Page:* ${sourcePage}
+📅 *Submitted On:* ${formattedDate}
+
+👤 *Customer Details*
+━━━━━━━━━━━━━━━━━━
+• Name: ${customerName}
+• Contact: ${phoneNumber}
+
+📝 *Requirement Details*
+━━━━━━━━━━━━━━━━━━
+`;
+
+for (let key in details) {
+    if(key !== 'Customer Name' && key !== 'Full Name' && key !== 'Owner Name' && key !== 'Phone' && key !== 'Contact Number'){
+        fullMessage += `• ${key}: ${details[key]}
+`;
+    }
+}
+
+fullMessage += `
+━━━━━━━━━━━━━━━━━━
+🔔 Please review and connect with the customer at the earliest.
+
+– All In One Solapur System
+`;
+
+const encodedMessage = encodeURIComponent(fullMessage);
+// 👉 If Marriage Form, send to Marriage	 WhatsApp number
+if(title === 'Muslim Marriage Connect'){
+
+    const marriageNumber = "917776983511"; // 77769 83511
+    const marriageURL = `https://wa.me/${marriageNumber}?text=${encodedMessage}`;
+
+    // Change success message
+    document.querySelector('#successOverlay h2').innerText = "Profile Ready!";
+    document.querySelector('#successOverlay p').innerHTML =
+        "Your profile details are ready.<br><br>" +
+        "👉 WhatsApp will open now.<br>" +
+        "📸 Please attach your profile photo again in WhatsApp After sending.<br><br>" +
+        "Do NOT edit the message. Just send it directly.";
+
+    window.open(marriageURL, "_blank");
+    return;
+}
+
+
+        }
+
+        function calculateAge() {
+            const dobInput = document.getElementById('mDob').value;
+            if (!dobInput) return;
+            const dob = new Date(dobInput);
+            const diff = Date.now() - dob.getTime();
+            const ageDate = new Date(diff);
+            const calculatedAge = Math.abs(ageDate.getUTCFullYear() - 1970);
+            document.getElementById('mAge').value = calculatedAge;
+        }
+
+        function toggleGenderFields() {
+            const gender = document.getElementById('mGender').value;
+            const label = document.getElementById('genderLabel');
+            label.innerText = (gender === 'Male') ? 'Beard' : 'Hijab';
+        }
+function openAAShoesPage(){
+
+    const modal = document.getElementById('reqModal');
+    const container = document.getElementById('modalContent');
+
+    container.innerHTML = `
+        <div class="aa-shoes-wrapper">
+
+            <div class="form-header" style="text-align:center; margin-bottom:25px;">
+                <h2 class="serif-text">AA Shoes Store</h2>
+                <p>Bara Imam Chowk, Somwar Peth, Solapur</p>
+            </div>
+<div class="aa-contact-buttons" style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:25px;">
+
+    <a href="tel:7887605373" class="btn-secondary" style="text-decoration:none;">
+        📞 Call
+    </a>
+
+    <a href="mailto:ayaanaleem680@gmail.com" class="btn-secondary" style="text-decoration:none;">
+        📧 Email
+    </a>
+
+    <button onclick="sendAAShoesWhatsApp()" class="btn-primary">
+        💬 WhatsApp
+    </button>
+
+    <!-- Premium Instagram Button -->
+    <a href="https://www.instagram.com/aa_shoes_solapur/" 
+       target="_blank"
+       style="
+        display:inline-flex;
+        align-items:center;
+        gap:10px;
+        padding:10px 22px;
+        border-radius:50px;
+        background: linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+        color:white;
+        font-weight:600;
+        text-decoration:none;
+        box-shadow:0 8px 20px rgba(0,0,0,0.15);
+        transition:0.3s ease;
+       "
+       onmouseover="this.style.transform='scale(1.05)'"
+       onmouseout="this.style.transform='scale(1)'">
+       
+        <i class="fab fa-instagram"></i>
+        Instagram
+    </a>
+
+</div>
+
+            <form class="premium-form">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" id="aa_name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Number</label>
+                        <input type="tel" id="aa_phone" placeholder="Mobile Number" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Select Category</label>
+                    <select id="aa_category">
+                        <option>Men Shoes</option>
+                        <option>Women Shoes</option>
+                        <option>Sports Shoes</option>
+                        <option>Casual Wear</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Required Size</label>
+                        <input type="text" id="aa_size" placeholder="e.g. 9">
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Brand (Optional)</label>
+                        <input type="text" id="aa_brand" placeholder="Nike / Adidas etc">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Additional Requirement</label>
+                    <textarea id="aa_message" rows="3" placeholder="Color / Budget / Type etc"></textarea>
+                </div>
+
+                <button type="button" onclick="sendAAShoesWhatsApp()" class="btn-primary w-full" style="padding:15px;">
+                    Send on WhatsApp
+                </button>
+
+            </form>
+        </div>
+    `;
+
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+function sendAAShoesWhatsApp(){
+
+    const name = document.getElementById("aa_name").value;
+    const phone = document.getElementById("aa_phone").value;
+    const category = document.getElementById("aa_category").value;
+    const size = document.getElementById("aa_size").value;
+    const brand = document.getElementById("aa_brand").value;
+    const message = document.getElementById("aa_message").value;
+
+    if(!name || !phone){
+        alert("Please fill Name and Contact Number");
+        return;
+    }
+
+    let fullMessage = `👟 *AA Shoes Store Enquiry*
+
+📍 Bara Imam Chowk, Solapur
+
+👤 Name: ${name}
+📞 Contact: ${phone}
+
+🥿 Category: ${category}
+📏 Size: ${size}
+🏷 Brand: ${brand}
+
+📝 Requirement:
+${message}
+
+Please share available options.`;
+
+    const encoded = encodeURIComponent(fullMessage);
+    const whatsappURL = `https://wa.me/917887605373?text=${encoded}`;
+
+    window.open(whatsappURL, "_blank");
+}
+function openFuneralServicePage(){
+
+    const modal = document.getElementById('reqModal');
+    const container = document.getElementById('modalContent');
+
+    container.innerHTML = `
+        <div class="funeral-wrapper">
+
+            <div class="form-header" style="text-align:center; margin-bottom:25px;">
+                <h2 class="serif-text">🕋 Muslim Funeral Essentials</h2>
+                <p>Dignified Janaza Support – 24/7 Assistance</p>
+            </div>
+
+            <div class="funeral-contact-buttons" style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:25px;">
+                <a href="tel:9561961750" class="btn-secondary" style="text-decoration:none;">📞 Call Now</a>
+                <button onclick="sendFuneralWhatsApp()" class="btn-primary">💬 WhatsApp Support</button>
+            </div>
+
+            <form class="premium-form">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Contact Person Name</label>
+                        <input type="text" id="funeral_name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Number</label>
+                        <input type="tel" id="funeral_phone" placeholder="Mobile Number" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Service Required</label>
+                    <select id="funeral_service">
+                        <option>Complete Janaza Arrangement</option>
+                        <option>Kafan & Burial Essentials</option>
+                        <option>Transport Arrangement</option>
+                        <option>Grave Preparation</option>
+                        <option>Urgent Immediate Support</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Location Details</label>
+                    <textarea id="funeral_location" rows="2" placeholder="Mention Area / Hospital / Address"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Additional Information</label>
+                    <textarea id="funeral_message" rows="2" placeholder="Any special request"></textarea>
+                </div>
+
+                <button type="button" onclick="sendFuneralWhatsApp()" class="btn-primary w-full" style="padding:15px;">
+                    Send Request on WhatsApp
+                </button>
+
+            </form>
+
+        </div>
+    `;
+
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+function sendFuneralWhatsApp(){
+
+    const name = document.getElementById("funeral_name").value;
+    const phone = document.getElementById("funeral_phone").value;
+    const service = document.getElementById("funeral_service").value;
+    const location = document.getElementById("funeral_location").value;
+    const message = document.getElementById("funeral_message").value;
+
+    if(!name || !phone){
+        alert("Please fill Name and Contact Number");
+        return;
+    }
+
+    let fullMessage = `🕋 *Muslim Funeral Essentials Request*
+
+📞 Contact Person: ${name}
+📱 Mobile: ${phone}
+
+📌 Service Required: ${service}
+📍 Location: ${location}
+
+📝 Additional Info:
+${message}
+
+Kindly provide immediate assistance.`;
+
+    const encoded = encodeURIComponent(fullMessage);
+    const whatsappURL = `https://wa.me/919561961750?text=${encoded}`;
+
+    window.open(whatsappURL, "_blank");
+}
+function sendDirectWhatsApp(event, serviceName){
+
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    let message = `✨ *New Service Enquiry – All In One Solapur* ✨
+
+📌 Service: ${serviceName}
+
+━━━━━━━━━━━━━━━━━━
+`;
+
+    formData.forEach((value, key) => {
+        message += `• ${key}: ${value}
+`;
+    });
+
+    message += `
+━━━━━━━━━━━━━━━━━━
+Please connect with customer soon.
+`;
+
+    const encoded = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/918975367215?text=${encoded}`;
+
+    window.open(whatsappURL, "_blank");
+}
+function sendPartnerWhatsApp(event){
+
+    event.preventDefault();
+
+    const form = document.getElementById("partnerForm");
+    const formData = new FormData(form);
+
+    let message = `🚀 *New Partner Registration – All In One Solapur*
+
+━━━━━━━━━━━━━━━━━━
+`;
+
+    formData.forEach((value, key) => {
+        message += `• ${key}: ${value}
+`;
+    });
+
+    message += `
+━━━━━━━━━━━━━━━━━━
+Kindly review this business application.`;
+
+    const encoded = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/918975367215?text=${encoded}`;
+
+    window.open(whatsappURL, "_blank");
+}
+        window.onload = () => {
+            renderServices(SERVICES_DATA);
+
+            const searchInput = document.getElementById('serviceSearch');
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const q = e.target.value.toLowerCase();
+                    const filtered = SERVICES_DATA.filter(s => 
+                        s.title.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q)
+                    );
+                    renderServices(filtered);
+                });
+            }
+
+            const marriageForm = document.getElementById('marriageForm');
+            if (marriageForm) {
+                marriageForm.onsubmit = (e) => handleFinalSubmit(e, 'Muslim Marriage Connect');
+            }
+            
+            window.onclick = (event) => {
+                const modal = document.getElementById('reqModal');
+                if (event.target == modal) closeModal();
+            };
+        };
+    </script>
+</body>
+</html>
