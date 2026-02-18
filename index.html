@@ -727,20 +727,70 @@ const encodedMessage = encodeURIComponent(fullMessage);
 // 👉 If Marriage Form, send to Marriage	 WhatsApp number
 if(title === 'Muslim Marriage Connect'){
 
-    const marriageNumber = "917776983511"; // 77769 83511
-    const marriageURL = `https://wa.me/${marriageNumber}?text=${encodedMessage}`;
+    const marriageNumber = "917776983511";
 
-    // Change success message
-    document.querySelector('#successOverlay h2').innerText = "Profile Ready!";
-    document.querySelector('#successOverlay p').innerHTML =
-        "Your profile details are ready.<br><br>" +
-        "👉 WhatsApp will open now.<br>" +
-        "📸 Please attach your profile photo again in WhatsApp After sending.<br><br>" +
-        "Do NOT edit the message. Just send it directly.";
+    const photoStatus = details['Photo'] && details['Photo'].name ? "Uploaded" : "Not Provided";
+    const idStatus = details['ID Proof'] && details['ID Proof'].name ? "Uploaded" : "Not Provided";
+
+    let biodataMessage =
+`Bijapure Sir,
+Ye mera Bio Data hai.
+Mujhe aapke "फ़्री मुस्लिम रिश्तो का ग्रुप हर गांव के लिए, हमसे राब्ता करे" is group me add kijiye.
+
+------------------------------
+🧕 MUSLIM MARRIAGE BIO DATA
+------------------------------
+
+🔹 Personal Details
+• Full Name: ${details['Full Name'] || ''}
+• Gender: ${details['Gender'] || ''}
+• Marital Status: ${details['Marital Status'] || ''}
+• Date of Birth: ${details['DOB'] || ''}
+• Age: ${details['Age'] || ''}
+• Height: ${details['Height'] || ''}
+• Religion: ${details['Religion'] || ''}
+• Sect: ${details['Sect'] || ''}
+
+🔹 Education & Career
+• Highest Education: ${details['Education'] || ''}
+• Occupation: ${details['Occupation'] || ''}
+• Company / Business: ${details['Company'] || ''}
+• Annual Income: ${details['Income'] || ''}
+
+🔹 Family Details
+• Father's Name: ${details['Father Name'] || ''}
+• Father's Occupation: ${details['Father Work'] || ''}
+• Mother's Name: ${details['Mother Name'] || ''}
+• Native Place: ${details['Native Place'] || ''}
+• Current City: ${details['Current City'] || ''}
+• Guardian Contact: ${details['Phone'] || ''}
+• Alternate Contact: ${details['Alt Phone'] || ''}
+
+🔹 Religious & Personal Info
+• Namaz: ${details['Namaz'] || ''}
+• Beard / Hijab: ${details['Religious Sign'] || ''}
+• Hobbies: ${details['Hobbies'] || ''}
+• About Me: ${details['Bio'] || ''}
+
+🔹 Partner Preference
+• Preferred Age: ${details['Partner Age'] || ''}
+• Preferred Education: ${details['Partner Edu'] || ''}
+• Preferred City: ${details['Partner City'] || ''}
+• Expectations: ${details['Expectations'] || ''}
+
+🔹 Documents
+• Photo: ${photoStatus}
+• ID Proof: ${idStatus}
+
+------------------------------`;
+
+    const encodedMessage = encodeURIComponent(biodataMessage);
+    const marriageURL = `https://wa.me/${marriageNumber}?text=${encodedMessage}`;
 
     window.open(marriageURL, "_blank");
     return;
 }
+
 
 
         }
