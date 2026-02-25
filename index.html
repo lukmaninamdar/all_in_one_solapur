@@ -39,7 +39,173 @@
         }
         @keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         .success-icon { font-size: 4rem; color: var(--aqua); margin-bottom: 20px; }
-    </style>
+/* Premium Photography Form v2 */
+.photo-form-container {
+    padding: 15px;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(145deg, #fdfcfa, #f1f5f9);
+    border-radius: 20px;
+}
+
+.event-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.event-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+    font-weight: 600;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 10px;
+    font-size: 1rem;
+}
+
+.photo-input-group {
+    margin-bottom: 15px;
+}
+
+.photo-input-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.photo-input-group input, 
+.photo-input-group select, 
+.photo-input-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    background: rgba(255,255,255,0.9);
+}
+
+.photo-input-group input:focus,
+.photo-input-group select:focus,
+.photo-input-group textarea:focus {
+    border-color: #3a7bd5;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(58, 123, 213, 0.15);
+}
+
+.add-event-btn {
+    width: 100%;
+    padding: 14px;
+    background: #ffffff;
+    border: 2px dashed #cfd8dc;
+    border-radius: 15px;
+    color: #555;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+}
+
+.add-event-btn:hover {
+    background: #e3f2fd;
+    border-color: #90caf9;
+    color: #0d47a1;
+}
+
+.photo-action-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.photo-action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 14px 5px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.photo-action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.btn-call { background: #28a745; }
+.btn-mail { background: #007bff; }
+.btn-map { background: #ffc107; color: #000; }
+.btn-insta { background: #e1306c; }
+
+.submit-photo-main {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+    color: white;
+    border: none;
+    border-radius: 18px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 15px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(58, 123, 213, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.submit-photo-main:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(58, 123, 213, 0.5);
+}
+
+/* Instagram Toast */
+#instaToast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 12px;
+    padding: 16px;
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+#instaToast.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+@keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+ </style>
 </head>
 <body>
 
@@ -493,7 +659,7 @@
 
     <footer class="footer" style="padding: 40px 0; border-top: 1px solid var(--border); margin-top: 80px; text-align: center;">
         <div class="container">
-            <p>&copy; 2024 All In One Solapur. All Rights Reserved.</p>
+            <p>&copy; 2026 All In One Solapur. All Rights Reserved.</p>
             <div class="socials" style="display: flex; gap: 20px; justify-content: center; margin: 15px 0;">
 <a href="https://instagram.com/all_in_one_solapur" target="_blank" 
    style="color: var(--navy); font-size: 1.4rem;">
@@ -514,6 +680,12 @@
             <div id="modalContent"></div>
         </div>
     </div>
+<!-- Modal for Requirement Forms -->
+<div id="reqModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:9999;">
+    <div id="modalContent" style="background:white; border-radius:15px; padding:20px; max-width:600px; width:90%; max-height:90%; overflow-y:auto; box-shadow:0 10px 25px rgba(0,0,0,0.2);">
+        <!-- Premium Photography form will be injected here -->
+    </div>
+</div>
 
     <div id="successOverlay" class="success-overlay">
         <div class="success-card">
@@ -529,10 +701,12 @@ Please attach your Image/Photo After sending.
     </div>
 
     <script>
+        
         const SERVICES_DATA = [
 
             { id: 'chef', title: 'Professional Chef for Dawat', cat: 'Events', tag: 'Essential', icon: '🍽️', desc: 'Specialized in Hyderabadi, Mughlai, and local Solapuri function cooking.', fields: ['Guests Count', 'Menu Preference', 'Venue Area'] },
             { id: 'bridal', title: 'Makeup & Bridal Parlour', cat: 'Wedding', tag: 'Popular', icon: '💄', desc: 'Premium bridal packages and festive makeup artists available city-wide.', fields: ['Occasion Type', 'Home Service Req?'] },
+  { id: 'mehndi', title: 'Mehndi Artists', cat: 'Wedding', tag: 'Popular', icon: '🎨', desc: 'Arabic, Indian, and Bridal mehndi designs by top local artists.', fields: ['Style', 'Number of Hands'] },
             { id: 'photo', title: 'Photography & Videography', cat: 'Media', tag: 'New', icon: '📸', desc: 'Professional event coverage, portraits, and commercial shoots.', fields: ['Event Hours', 'Output Type'] },
 {
     id: 'aa_shoes',
@@ -553,6 +727,15 @@ Please attach your Image/Photo After sending.
     fields: []
 },
 {
+    id: 'jtech_computer',
+    title: 'Computer, Xerox & Online Government Services',
+    cat: 'Computer & Government',
+    tag: 'Trusted',
+    icon: '💻',
+    desc: 'Complete digital, printing & government services under one roof in Solapur.',
+    fields: []
+},
+{
     id: 'advocate_service',
     title: 'Advocate Legal Consultation',
     cat: 'Legal',
@@ -567,11 +750,89 @@ Please attach your Image/Photo After sending.
             { id: 'funeral', title: 'Muslim Funeral Essentials', cat: 'Community', tag: 'Service', icon: '🕋', desc: 'Dignified Janaza support and essential supply arrangements.', fields: ['Urgency', 'Requirements'] },
             { id: 'gifts', title: 'Handcrafted Resin & Gifts', cat: 'Craft', tag: 'Boutique', icon: '🎁', desc: 'Personalized resin art and premium gift hampers for any occasion.', fields: ['Item Type', 'Personalization Details'] },
             { id: 'decor', title: 'Flower & Event Decoration', cat: 'Events', tag: 'Trending', icon: '🌸', desc: 'Modern stage decor, floral backdrops, and home event styling.', fields: ['Event Type', 'Decor Level'] },
-            { id: 'mehndi', title: 'Mehndi Artists', cat: 'Wedding', tag: 'Popular', icon: '🎨', desc: 'Arabic, Indian, and Bridal mehndi designs by top local artists.', fields: ['Style', 'Number of Hands'] },
+          
             { id: 'caterers', title: 'Home-based Caterers', cat: 'Food', tag: 'Authentic', icon: '🥘', desc: 'Small scale authentic home-cooked meals for family gatherings.', fields: ['Number of Plates', 'Menu Type'] },
             { id: 'islamic_events', title: 'Islamic Event Services', cat: 'Community', tag: 'Spiritual', icon: '🌙', desc: 'Arrangements for Milad, Dars, and other religious gatherings.', fields: ['Type of Gathering', 'Setup Required'] }
         ];
+function handleMehndiStyle(){
 
+    const style = document.getElementById("mehndiStyle").value;
+    const container = document.getElementById("styleExtraOptions");
+
+    if(style === "Bridal"){
+        container.innerHTML = `
+            <div class="form-group">
+                <label>Bridal Package Type</label>
+                <select id="bridalPackage">
+                    <option>Basic Bridal</option>
+                    <option>Premium Bridal</option>
+                    <option>Royal Bridal Package</option>
+                </select>
+            </div>
+        `;
+    }
+
+    else if(style === "Arabic"){
+        container.innerHTML = `
+            <div class="form-group">
+                <label>Arabic Pattern Type</label>
+                <select id="arabicPattern">
+                    <option>Floral</option>
+                    <option>Bold Design</option>
+                    <option>Simple Chain Style</option>
+                </select>
+            </div>
+        `;
+    }
+
+    else{
+        container.innerHTML = "";
+    }
+}function sendMehndiWhatsApp(event){
+    event.preventDefault();
+
+    const name = document.getElementById("mehndiName").value;
+    const phone = document.getElementById("mehndiPhone").value;
+    const address = document.getElementById("mehndiAddress").value;
+    const style = document.getElementById("mehndiStyle").value;
+    const hands = document.getElementById("mehndiHands").value;
+    const date = document.getElementById("mehndiDate").value;
+
+    let extra = "";
+
+    if(document.getElementById("bridalPackage")){
+        extra = "Bridal Package: " + document.getElementById("bridalPackage").value;
+    }
+
+    if(document.getElementById("arabicPattern")){
+        extra = "Arabic Pattern: " + document.getElementById("arabicPattern").value;
+    }
+
+let message = 
+`🌟 *All In One Solapur* 🌟
+Your Trusted Local Service Platform
+
+🎨 *Mehndi Service Inquiry*
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+📍 Address: ${address}
+
+💅 Style Selected: ${style}
+${extra ? "✨ " + extra : ""}
+
+🖐 Number of Hands: ${hands}
+📅 Preferred Date: ${date}
+
+Thank you for choosing All In One Solapur ❤️
+Please confirm availability & pricing.
+`;
+
+window.open(
+    "https://wa.me/919699411996?text=" + encodeURIComponent(message),
+    "_blank"
+);
+}
         function switchView(viewId) {
             document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
             const target = document.getElementById('view-' + viewId);
@@ -613,12 +874,20 @@ if(id === 'dental_clinic'){
     openDentalClinicPage();
     return;
 }
-
 if(id === 'advocate_service'){
     openAdvocatePage();
     return;
 }
-
+if(id === 'jtech_computer'){
+    openJTechPage();
+    return;
+}
+if(id === 'photo'){
+    const modal = document.getElementById('reqModal');
+    modal.style.display = 'flex'; // open modal
+    renderPremiumPhotoForm(); // inject form
+    return;
+}
       
             const modal = document.getElementById('reqModal');
             const container = document.getElementById('modalContent');
@@ -630,6 +899,71 @@ if(id === 'advocate_service'){
                     <input type="text" name="${f}" placeholder="Please specify..." required>
                 </div>
             `).join('');
+if(service.id === 'mehndi'){
+
+    container.innerHTML = `
+    <div class="form-header" style="text-align:center; margin-bottom:25px;">
+        <div style="font-size:3rem;">${service.icon}</div>
+        <h2 class="serif-text">${service.title}</h2>
+        <p>Select design style & fill details.</p>
+    </div>
+
+    <form class="premium-form" onsubmit="sendMehndiWhatsApp(event)">
+
+        <div class="form-row">
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" id="mehndiName" required>
+            </div>
+            <div class="form-group">
+                <label>Contact Number</label>
+                <input type="tel" id="mehndiPhone" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Address</label>
+            <textarea id="mehndiAddress" placeholder="Full address with landmark" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Select Mehndi Style</label>
+            <select id="mehndiStyle" onchange="handleMehndiStyle()" required>
+                <option value="">Select Style</option>
+                <option value="Arabic">Arabic</option>
+                <option value="Indian">Indian Traditional</option>
+                <option value="Bridal">Bridal Full Hand</option>
+                <option value="Minimal">Minimal Design</option>
+            </select>
+        </div>
+
+        <div id="styleExtraOptions"></div>
+
+        <div class="form-group">
+            <label>Number of Hands</label>
+            <select id="mehndiHands" required>
+                <option>1 Hand</option>
+                <option>2 Hands</option>
+                <option>Full Both Hands</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Preferred Date</label>
+            <input type="date" id="mehndiDate" required>
+        </div>
+
+        <button type="submit" class="btn-primary w-full" style="padding:15px;">
+            Submit Requirement
+        </button>
+    </form>
+    `;
+
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    return;  // ⚠️ VERY IMPORTANT
+
+}
 
             container.innerHTML = `
                 <div class="form-header" style="text-align:center; margin-bottom: 25px;">
@@ -1260,8 +1594,133 @@ function openAdvocatePage(){
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
 }
+function openJTechPage(){
 
-function openFuneralServicePage(){
+    const modal = document.getElementById('reqModal');
+    const container = document.getElementById('modalContent');
+
+    container.innerHTML = `
+        <div class="jtech-wrapper">
+
+            <div class="form-header" style="text-align:center; margin-bottom:25px;">
+                <h2 class="serif-text">💻 J TECH COMPUTER</h2>
+                <p><strong>Lashkar, Solapur – 413003</strong></p>
+                <p>👤 Owner: Javed Shaikh</p>
+                <p style="margin-top:10px; font-weight:600;">
+                “Aapka Har Online Kaam, Ek Hi Jagah.”
+                </p>
+            </div>
+
+            <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:25px;">
+
+                <button onclick="document.getElementById('jtechForm').requestSubmit()" class="btn-primary">
+                    💬 WhatsApp
+                </button>
+
+                <a href="tel:7798360045" class="btn-secondary" style="text-decoration:none;">
+                    📞 Call
+                </a>
+
+   		 <a href="mailto:jtechcomputer212@gmail.com" class="btn-secondary" style="text-decoration:none;">
+       		 📧 Email
+   		 </a>
+
+                <a href="https://maps.app.goo.gl/NwXRyTFcphQJBBHG9" target="_blank" 
+                   class="btn-secondary" style="text-decoration:none;">
+                    📍 Google Map
+                </a>
+
+            </div>
+
+            <div style="background:#f9fafc; padding:20px; border-radius:15px; margin-bottom:25px; font-size:0.85rem; line-height:1.6;">
+                <strong>Services Available:</strong><br><br>
+
+                🖨️ Printing & Documentation<br>
+                🏛️ Aadhaar, PAN, Voter, Passport, Certificates<br>
+                👩 Women Schemes – Ladki Bahin, Matru Vandana<br>
+                👨‍🌾 Farmer Services – PM Kisan, Fasal Bima, KCC<br>
+                🏠 Ayushman, Pension, PM Awas<br>
+                🎓 Scholarship, Exam Forms, APAAR ID<br>
+                💳 GST, ITR, Udyam, FSSAI<br>
+                ✈️ Travel Booking – Train, Bus, Flight<br>
+                💻 Typing, PDF Editing, Photo Editing, Repair
+            </div>
+
+            <form id="jtechForm" class="premium-form" onsubmit="sendJTechWhatsApp(event)">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="jt_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Number</label>
+                        <input type="tel" id="jt_phone" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Select Service Category</label>
+                    <select id="jt_service">
+                        <option>Printing / Xerox</option>
+                        <option>Government Work</option>
+                        <option>Scholarship / Exam Form</option>
+                        <option>Farmer Services</option>
+                        <option>Women Scheme</option>
+                        <option>GST / ITR / Business</option>
+                        <option>Travel Booking</option>
+                        <option>Computer Repair / Software</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Describe Your Requirement</label>
+                    <textarea id="jt_message" rows="3" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary w-full" style="padding:15px;">
+                    Send Request on WhatsApp
+                </button>
+
+            </form>
+
+        </div>
+    `;
+
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+function sendJTechWhatsApp(event){
+
+    event.preventDefault();
+
+    const name = document.getElementById("jt_name").value;
+    const phone = document.getElementById("jt_phone").value;
+    const service = document.getElementById("jt_service").value;
+    const message = document.getElementById("jt_message").value;
+
+    let fullMessage = `💻 *J TECH COMPUTER Enquiry*
+
+📍 Lashkar, Solapur
+👤 Owner: Javed Shaikh
+
+👤 Name: ${name}
+📞 Contact: ${phone}
+
+📂 Service Type: ${service}
+
+📝 Requirement:
+${message}
+
+Kindly respond with details.`;
+
+    const encoded = encodeURIComponent(fullMessage);
+
+    const whatsappURL = `https://wa.me/917798360045?text=${encoded}`;
+
+    window.open(whatsappURL, "_blank");
+}function openFuneralServicePage(){
 
     const modal = document.getElementById('reqModal');
     const container = document.getElementById('modalContent');
@@ -1435,6 +1894,324 @@ Kindly review this business application.`;
                 if (event.target == modal) closeModal();
             };
         };
+let eventCount = 0;
+function renderPremiumPhotoForm() {
+    const container = document.getElementById('modalContent');
+    eventCount = 0; // reset counter
+
+    container.innerHTML = `
+        <div class="photo-form-container">
+            <h2 style="margin-bottom:20px; color:#1a1a1a;">Premium Photography</h2>
+            <div class="photo-input-group">
+                <label>Full Name *</label>
+                <input type="text" id="pName" placeholder="Enter your name" required>
+            </div>
+            <div class="photo-input-group">
+                <label>Contact Number *</label>
+                <input type="tel" id="pContact" placeholder="Phone number" required>
+            </div>
+            <div id="eventCardsContainer"></div>
+            <button type="button" class="add-event-btn" onclick="addNewEventCard()">
+                <i class="fa fa-plus-circle"></i> Add Another Event
+            </button>
+            <button type="button" class="submit-photo-main" onclick="sendPhotoWhatsApp()">
+                Confirm & Send on WhatsApp
+            </button>
+            <div class="photo-action-grid">
+                <a href="tel:8999882442" class="photo-action-btn btn-call">
+                    <i class="fa fa-phone"></i> Call
+                </a>
+                <a href="mailto:inamdarlukman2004@gmail.com" class="photo-action-btn btn-mail">
+                    <i class="fa fa-envelope"></i> Email
+                </a>
+                <a href="https://www.google.com/maps?q=Solapur" target="_blank" class="photo-action-btn btn-map">
+                    <i class="fa fa-map-marker-alt"></i> Map
+                </a>
+                <button onclick="showInstaError()" class="photo-action-btn btn-insta">
+                    <i class="fab fa-instagram"></i> Insta
+                </button>
+            </div>
+        </div>
+        <div id="instaToast">📸 Instagram account not added yet</div>
+    `;
+
+    addNewEventCard(); // first event card automatically
+}function addNewEventCard() {
+    eventCount++;
+    const container = document.getElementById('eventCardsContainer');
+    const card = document.createElement('div');
+    card.className = 'event-card';
+    card.id = `event_card_${eventCount}`;
+    card.style.opacity = 0;
+    card.style.transform = 'translateY(20px)';
+
+    card.innerHTML = `
+        <div class="event-card-header">
+            <span><i class="fa fa-camera"></i> Event #${eventCount}</span>
+            ${eventCount > 1 ? `<i class="fa fa-times" onclick="this.parentElement.parentElement.remove()" style="cursor:pointer; color:#ff4d4d;"></i>` : ''}
+        </div>
+        <div class="photo-input-group">
+            <label>Event Type</label>
+            <select class="p-type" onchange="checkOtherType(this, ${eventCount})">
+                <option value="">Select Event Type</option>
+                <option>Engagement</option>
+                <option>Save The Date Shoot</option>
+                <option>Pre-Wedding Shoot</option>
+                <option>Haldi Ceremony</option>
+                <option>Mehndi Ceremony</option>
+                <option>Sangeet Night</option>
+                <option>Nikah</option>
+                <option>Wedding Ceremony</option>
+                <option>Reception</option>
+                <option>Valima</option>
+                <option>Baby Shower</option>
+                <option>Birthday Party</option>
+                <option>Anniversary</option>
+                <option>Corporate Event</option>
+                <option value="Other">Other (Custom)</option>
+            </select>
+            <input type="text" class="p-other" id="other_${eventCount}" placeholder="What kind of event?" style="display:none; margin-top:10px;">
+        </div>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+            <div class="photo-input-group">
+                <label>Date</label>
+                <input type="date" class="p-date">
+            </div>
+            <div class="photo-input-group">
+                <label>Time Slot</label>
+                <select class="p-slot">
+                    <option value="">Select Slot</option>
+                    <option>Early Morning (6 AM – 9 AM)</option>
+                    <option>Morning (9 AM – 12 PM)</option>
+                    <option>Afternoon (12 PM – 4 PM)</option>
+                    <option>Evening (4 PM – 8 PM)</option>
+                    <option>Night (8 PM – 12 AM)</option>
+                    <option>Full Day Coverage</option>
+                </select>
+            </div>
+        </div>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+            <div class="photo-input-group">
+                <label>Exact Time</label>
+                <input type="time" class="p-time">
+            </div>
+            <div class="photo-input-group">
+                <label>Duration</label>
+                <input type="text" class="p-duration" placeholder="e.g. 4 Hours">
+            </div>
+        </div>
+        <div class="photo-input-group">
+            <label>Output Required</label>
+            <select class="p-output">
+                <option value="">Select Output</option>
+                <option>Photos Only</option>
+                <option>Videos Only</option>
+                <option>Both (Photos & Video)</option>
+            </select>
+        </div>
+        <div class="photo-input-group">
+            <label>Notes</label>
+            <textarea class="p-notes" rows="2" placeholder="Any specific requirements?"></textarea>
+        </div>
+    `;
+    container.appendChild(card);
+
+    // animation
+    setTimeout(() => {
+        card.style.transition = 'all 0.4s ease-out';
+        card.style.opacity = 1;
+        card.style.transform = 'translateY(0)';
+    }, 50);
+}function checkOtherType(select, id) {
+    const otherInput = document.getElementById(`other_${id}`);
+    otherInput.style.display = (select.value === 'Other') ? 'block' : 'none';
+}
+
+function showInstaError() {
+    const toast = document.getElementById("instaToast");
+    toast.className = "show";
+    setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+}
+
+function sendPhotoWhatsApp() {
+    const name = document.getElementById('pName').value;
+    const contact = document.getElementById('pContact').value;
+
+    if(!name || !contact){ alert("Please enter your Name and Contact Number."); return; }
+
+    let message = `📸 *New Photography Inquiry*\n\n👤 *Name:* ${name}\n📞 *Contact:* ${contact}\n\n`;
+    const cards = document.getElementsByClassName('event-card');
+
+    for(let i=0;i<cards.length;i++){
+        const card = cards[i];
+        let type = card.querySelector('.p-type').value;
+        const otherType = card.querySelector('.p-other').value;
+        const date = card.querySelector('.p-date').value;
+        const slot = card.querySelector('.p-slot').value;
+        const time = card.querySelector('.p-time').value;
+        const duration = card.querySelector('.p-duration').value;
+        const output = card.querySelector('.p-output').value;
+        const notes = card.querySelector('.p-notes').value;
+
+        if(type==='Other') type = otherType || 'Other Event';
+        if(type||date||slot||notes){
+            message += `*--- Event ${i+1} ---*\n`;
+            if(type) message += `🔹 Type: ${type}\n`;
+            if(date) message += `📅 Date: ${date}\n`;
+            if(slot) message += `⏰ Slot: ${slot}\n`;
+            if(time) message += `🕓 Time: ${time}\n`;
+            if(duration) message += `⏳ Duration: ${duration}\n`;
+            if(output) message += `🎬 Output: ${output}\n`;
+            if(notes) message += `📝 Notes: ${notes}\n\n`;
+        }
+    }
+
+    window.open(`https://wa.me/918999882442?text=${encodeURIComponent(message)}`,'_blank');
+}
+
+function addNewEventCard() {
+    eventCount++;
+    const container = document.getElementById('eventCardsContainer');
+    const card = document.createElement('div');
+    card.className = 'event-card';
+    card.id = `event_card_${eventCount}`;
+    
+    card.innerHTML = `
+        <div class="event-card-header">
+            <span><i class="fa fa-camera"></i> Event #${eventCount}</span>
+            ${eventCount > 1 ? `<i class="fa fa-times" onclick="this.parentElement.parentElement.remove()" style="cursor:pointer; color:#ff4d4d;"></i>` : ''}
+        </div>
+        
+        <div class="photo-input-group">
+            <label>Event Type</label>
+            <select class="p-type" onchange="checkOtherType(this, ${eventCount})">
+                <option value="">Select Event Type</option>
+                <option>Engagement</option>
+                <option>Save The Date Shoot</option>
+                <option>Pre-Wedding Shoot</option>
+                <option>Haldi Ceremony</option>
+                <option>Mehndi Ceremony</option>
+                <option>Sangeet Night</option>
+                <option>Nikah</option>
+                <option>Wedding Ceremony</option>
+                <option>Reception</option>
+                <option>Valima</option>
+                <option>Baby Shower</option>
+                <option>Birthday Party</option>
+                <option>Anniversary</option>
+                <option>Corporate Event</option>
+                <option value="Other">Other (Custom)</option>
+            </select>
+            <input type="text" class="p-other" id="other_${eventCount}" placeholder="What kind of event?" style="display:none; margin-top:10px;">
+        </div>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+            <div class="photo-input-group">
+                <label>Date</label>
+                <input type="date" class="p-date">
+            </div>
+            <div class="photo-input-group">
+                <label>Time Slot</label>
+                <select class="p-slot">
+                    <option value="">Select Slot</option>
+                    <option>Early Morning (6 AM – 9 AM)</option>
+                    <option>Morning (9 AM – 12 PM)</option>
+                    <option>Afternoon (12 PM – 4 PM)</option>
+                    <option>Evening (4 PM – 8 PM)</option>
+                    <option>Night (8 PM – 12 AM)</option>
+                    <option>Full Day Coverage</option>
+                </select>
+            </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+            <div class="photo-input-group">
+                <label>Exact Time</label>
+                <input type="time" class="p-time">
+            </div>
+            <div class="photo-input-group">
+                <label>Duration</label>
+                <input type="text" class="p-duration" placeholder="e.g. 4 Hours">
+            </div>
+        </div>
+
+        <div class="photo-input-group">
+            <label>Output Required</label>
+            <select class="p-output">
+                <option value="">Select Output</option>
+                <option>Photos Only</option>
+                <option>Videos Only</option>
+                <option>Both (Photos & Video)</option>
+            </select>
+        </div>
+
+        <div class="photo-input-group">
+            <label>Notes</label>
+            <textarea class="p-notes" rows="2" placeholder="Any specific requirements?"></textarea>
+        </div>
+    `;
+    container.appendChild(card);
+}
+
+function checkOtherType(select, id) {
+    const otherInput = document.getElementById(`other_${id}`);
+    otherInput.style.display = (select.value === 'Other') ? 'block' : 'none';
+}
+
+function showInstaError() {
+    const toast = document.getElementById("instaToast");
+    toast.className = "show";
+    setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+}
+
+function sendPhotoWhatsApp() {
+    const name = document.getElementById('pName').value;
+    const contact = document.getElementById('pContact').value;
+
+    if(!name || !contact) {
+        alert("Please enter your Name and Contact Number.");
+        return;
+    }
+
+    let message = `📸 *New Photography Inquiry*\n\n`;
+    message += `👤 *Name:* ${name}\n`;
+    message += `📞 *Contact:* ${contact}\n\n`;
+
+    const cards = document.getElementsByClassName('event-card');
+    
+    for(let i=0; i < cards.length; i++) {
+        const card = cards[i];
+        let type = card.querySelector('.p-type').value;
+        const otherType = card.querySelector('.p-other').value;
+        const date = card.querySelector('.p-date').value;
+        const slot = card.querySelector('.p-slot').value;
+        const time = card.querySelector('.p-time').value;
+        const duration = card.querySelector('.p-duration').value;
+        const output = card.querySelector('.p-output').value;
+        const notes = card.querySelector('.p-notes').value;
+
+        if(type === 'Other') type = otherType || 'Other Event';
+        
+        if(type || date || slot || notes) {
+            message += `*--- Event ${i+1} ---*\n`;
+            if(type) message += `🔹 Type: ${type}\n`;
+            if(date) message += `📅 Date: ${date}\n`;
+            if(slot) message += `⏰ Slot: ${slot}\n`;
+            if(time) message += `🕓 Time: ${time}\n`;
+            if(duration) message += `⏳ Duration: ${duration}\n`;
+            if(output) message += `🎬 Output: ${output}\n`;
+            if(notes) message += `📝 Notes: ${notes}\n\n`;
+        }
+    }
+
+    const whatsappUrl = `https://wa.me/918999882442?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+}
     </script>
+    <!-- Modal for Requirement Forms -->
+<div id="reqModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:9999;">
+    <div id="modalContent" style="background:white; border-radius:15px; padding:20px; max-width:600px; width:90%; max-height:90%; overflow-y:auto; box-shadow:0 10px 25px rgba(0,0,0,0.2);">
+    </div>
+</div>
 </body>
 </html>
